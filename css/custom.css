@@ -4,10 +4,14 @@
 .socials {
     display: none;
 }
+.ads {
+    display: none;
+}
 .conteiner {
     display: grid;
     width: 100%;
     grid-template-columns: 320px;
+    margin-left: calc(50% - 160px);
     grid-template-rows: auto;
     row-gap: 30px;
     justify-items: center;
@@ -44,6 +48,7 @@
     grid-area: services;
     display: grid;
     width: 100%;
+    justify-self: center;
     grid-template-columns: 320px;
     grid-template-rows: auto;
     background-color: #f6f6f6;
@@ -113,9 +118,11 @@
 
 @media(min-width: 760px) {
     .conteiner{
+        margin-left: calc(50% - 380px);
         grid-template-columns: 320px 320px;
         column-gap: 20px;
         grid-template-areas:
+            "header header"
             "img socials"
             "hero hero"
             "services services"
@@ -125,5 +132,76 @@
             "freelance freelance"
             "footer footer";
     }
+    .nav {
+        display: none;
+    }
+    .services3 {
+        display: none;
+    }
+    .img-nav-socials {
+        display: none;
+    }
+    .ads {
+        display: none;
+    }
+    .img {
+        display: grid;
+        height: 50px;
+        width: 70px;
+        line-height: 50px;
+        justify-self: start;
+        background-color: #98ded9;
+    }
+    .socials {
+        display: grid;
+        height: 50px;
+        width: 130px;
+        line-height: 50px;
+        justify-self: end;
+        background-color: #98ded9;
+    }
+}
 
+@media(min-width: 1000px) {
+    .conteiner{
+        margin-left: calc(50% - 500px);
+        grid-template-columns: 250px 250px 250px 250px;
+        column-gap: 20px;
+        grid-template-areas:
+            "header header header header"
+            "img nav nav socials"
+            "hero hero hero hero"
+            "testimonials testimonials testimonials ads"
+            "testimonials1 testimonials2 testimonials2 ads"
+            "services services services ads "
+            "services1 services2 services3 ads "
+            "freelance freelance freelance ads"
+            "footer footer footer footer";
+    }
+    .nav {
+        display: grid;
+        height: 50px;
+        width: 300px;
+        line-height: 50px;
+        background-color: #98ded9;
+    }
+    .services3 {
+        display: grid;
+    }
+    .testimonials1 {
+        grid-area: testimonials1;
+        width: 385px;
+        justify-self: baseline;
+    }
+    .testimonials2 {
+        width: 385px;
+        justify-self: end;
+    }
+    .ads {
+        display: grid;
+        grid-area: ads;
+        row-gap: 0;
+        width: 100%;
+        background-color: #161d6f;
+    }
 }
